@@ -55,6 +55,14 @@ Route::get('/articles/{id}', function
 dengan ID ' .$id;
 });
 
+Route::get('/greeting', function () {
+    return view('blog.hello', ['name' => 'Zannur']);
+    });
+    
+Route::get('/greeting', [WelcomeController::class,
+    'greeting']);
+    
+
 Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
     });
